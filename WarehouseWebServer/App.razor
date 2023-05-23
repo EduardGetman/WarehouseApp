@@ -1,0 +1,6 @@
+﻿<link href="/css/styles.css" rel="stylesheet" type="text/css">
+<h1>Основная страница проекта <b>"Склад"</b></h1>
+<h3>Сейчас @DateTime.Now (@((MarkupString)TimeOfDay))</h3>
+@code {
+    string TimeOfDay => DateTime.Now.Hour is > 21 or < 5 ? "<h2>Ночь</h2>" : "<h2>День</h2>";
+}
