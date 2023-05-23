@@ -1,0 +1,9 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/WarehouseApp/FileContentIndex
+/WarehouseWebServer/obj
+/WarehouseWebServer/WarehouseWebServer.csproj.user
+/.vs
+/WarehouseWebServer/bin/Debug/net7.0
