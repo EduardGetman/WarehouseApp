@@ -1,0 +1,25 @@
+﻿<Panel>
+    <span>@Number</span>
+    <button @onclick="IncrementNumber">+</button>
+    <button @onclick="DecrementNumber">-</button>
+</Panel>
+
+@code {
+    [Parameter]
+    public decimal Number { get; set; } = 0;
+    [Parameter]
+    public decimal Shift { get; set; } = 1;
+    [Parameter]
+    public decimal Width { get; set; } = 150;
+
+    void IncrementNumber()
+    {
+        Number++;
+    }
+
+    void DecrementNumber()
+    {
+        Number--;
+    }
+
+}

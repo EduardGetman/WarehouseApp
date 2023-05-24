@@ -1,0 +1,11 @@
+﻿<link href="/css/styles.css" rel="stylesheet" type="text/css">
+<div class="box" @attributes="InputAtributes">
+    @ChildContent
+</div>
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string,object>? InputAtributes { get; set; }
+}

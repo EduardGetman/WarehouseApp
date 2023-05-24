@@ -1,0 +1,17 @@
+﻿<link href="/css/styles.css" rel="stylesheet" type="text/css">
+<Panel>
+    <h3>@Header</h3>
+    <ul>
+        @foreach (var item in Items)
+        {
+            <li>@item.ToString()</li>
+        }
+    </ul>
+</Panel>
+@code {
+    [Parameter]
+    public string Header { get; set; }
+    [Parameter]
+    [EditorRequired]
+    public List<object> Items { get; set; }
+}

@@ -1,6 +1,22 @@
-﻿<link href="/css/styles.css" rel="stylesheet" type="text/css">
+﻿@using WarehouseWebServer.Components
+@using System.Linq
+
+<link href="/css/styles.css" rel="stylesheet" type="text/css">
+
 <h1>Основная страница проекта <b>"Склад"</b></h1>
-<h3>Сейчас @DateTime.Now (@((MarkupString)TimeOfDay))</h3>
+<Panel style="background-color:ghostwhite;">
+    <h3>Сейчас @DateTime.Now (@TimeOfDay)</h3>
+</Panel>
+<ListBox Header="Список доступных складов" Items="@(Warehouses.Cast<object>().ToList())" />
+<SpinEdit />
+
 @code {
-    string TimeOfDay => DateTime.Now.Hour is > 21 or < 5 ? "<h2>Ночь</h2>" : "<h2>День</h2>";
+    string TimeOfDay => DateTime.Now.Hour is > 21 or < 5 ? "Ночь" : "День";
+    List<string> Warehouses = new()
+    {
+        "Склад химии",
+        "Сбытовой склад",
+        "Продуктовый склад",
+        "Склад бытовой электроники",
+    };
 }
